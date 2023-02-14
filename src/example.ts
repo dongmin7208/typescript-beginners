@@ -2,6 +2,41 @@ const dondon = {
   nickname: 'park',
 };
 
+// unknown
+let ab: unknown;
+if (typeof ab === 'number') {
+  let bb = ab + 10;
+}
+if (typeof ab === 'string') {
+  let bb = ab.toUpperCase();
+}
+
+// void
+function hello() {
+  console.log('hello');
+}
+
+// never
+function error(message: string): never {
+  throw new Error(message);
+}
+function heelo2(): never {
+  // return 'x';
+  throw new Error('x');
+}
+function hello3(name: string | number) {
+  if (typeof name === 'string') {
+    name.toUpperCase();
+  } else if (typeof name === 'number') {
+    name.toFixed();
+  } else {
+    name;
+  }
+}
+
+let aa: number[] = [1, 2];
+let bb: string[] = ['i1', 'i2'];
+let cc2: boolean[] = [true, false];
 //
 // dondon.hello()
 // '{ nickname: string; }' 형식에 'hello' 속성이 없습니다.ts(2339)
